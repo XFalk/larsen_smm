@@ -4,9 +4,7 @@
        src: url(Evolenta.ttf);
        /* Путь к файлу со шрифтом */
    }
-main{
-   scroll-behavior: smooth;
-}
+
    body {
        background-color: #f7f7f7;
    }
@@ -195,16 +193,63 @@ background-color: linear-gradient(90deg, rgba(218,205,205,1) 0%, rgba(255,243,24
        opacity: 1;
        transition: 0.7s;
    }
+#cont_for_photo{
+        margin-top: 38%;
+    margin-left: 15%;
+    opacity: 1;
+    margin-bottom: -10%;
+}
 
+#ph1{
+    transform: rotate(-10deg);
+}
+#ph2{
+    transform: rotate(4deg);
+}
+
+#cont_for_photo img{
+  width: 15vw;  
+    margin-left: 10%;
+    border-radius: 10px;
+}
 #about_me{
-    background-image: url(img/background1v4.jpg);
-    background-size: contain;
+    background-image: url(img/background1.jpg);
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    margin-top: 2%;
-    height: 100vh;
+    margin-top: 1%;
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: Evolenta;
 }
-#about_me2{
+#ab{
+   padding: 10%;
+    background: #ffffff4c;
+   margin-right: 5%;
+    font-size: 120%;
+    line-height: 1.5;
+    color: #525252;
+    border-radius: 12px;
+   /* overflow: auto;*/
+    
+    
+
+    
+}
+.section_about{
+    
+  min-width: 500px;
+    width: 50%;
+    padding-top: 5%;
+    }
+#ab *{
+    
+}
+
+#rates{
     background-image: url(img/background1v5.jpg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -219,19 +264,25 @@ background-color: black;
     margin-bottom: -1%;
     padding: 5px;
     opacity: 0.6;
+    height: 54px;
+    width: 34px;
+    margin-left: 40%;
+    margin-right: 40%;
 }
 
 /* begin Scroll Down Button */
-button.scroll_down {
+.scroll_down {
+    display:inline-block;
     opacity: 1;
   position: relative;
   margin-left: auto;
   margin-right: auto;
+    padding: 0px;
   left: 0;
   right: 0;
   height: 50px;
   width: 30px;
- /bottom: 60px;
+ /*bottom: 60px;*/
   background-color: transparent;
   border: 2px solid white;
   border-radius: 20px;
@@ -239,7 +290,7 @@ button.scroll_down {
   outline: none;
 }
 
-button.scroll_down:before {
+.scroll_down:before {
   position: absolute;
  /* top: 10px;*/
   left: 50%;
@@ -263,13 +314,126 @@ button.scroll_down:before {
     opacity: 1;
   }
   80% {
-    transform: translate(0, 20px);
+    transform: translate(0, 40px);
     opacity: 0;
   }
   100% {
     opacity: 0;
   }
 }
-
-
 /* end Scroll Down Button */
+
+
+
+.write_me {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    
+}
+
+.btn_write_me {
+  min-width: 300px;
+  min-height: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #313133;
+  background: #4FD1C5;
+background: linear-gradient(90deg, rgba(129,230,217,1) 0%, rgba(79,209,197,1) 100%);
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(79,209,197,.64);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+     z-index: 9999;
+    text-align: center;
+    line-height: 60px;
+  }
+
+.btn_write_me::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.btn_write_me:hover, .button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.btn_write_me:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+.btn_write_me::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid #00FFCB;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.btn_write_me:hover::after, button:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+#logo_up{
+    display: none;
+   position: fixed;
+    bottom: 5vh;
+    right: 1vw;
+    width: 100px;
+    height: 100px;
+    
+     transition: 0.2s;
+}
+#logo_up img{
+    width: 100%;
+}
+.novizible{
+    opacity: 0;
+      transition: 1s;
+}
+.vizible{
+    opacity: 0.5;
+      transition: 1s;
+}
+#logo_up:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
