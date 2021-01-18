@@ -204,7 +204,8 @@ background-color: linear-gradient(90deg, rgba(218,205,205,1) 0%, rgba(255,243,24
     transform: rotate(-10deg);
 }
 #ph2{
-    transform: rotate(4deg);
+    transform: rotate(10deg);
+    
 }
 
 #cont_for_photo img{
