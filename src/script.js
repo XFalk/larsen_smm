@@ -1,26 +1,4 @@
-/* begin Scroll Down Button */
 
-
- /* const btnScrollDowns = document.querySelectorAll('#scroll_down');
-
-  function scrollDown() {
-    let windowCoords = document.documentElement.clientHeight;
-      const pageHeight = document.documentElement.scrollHeight;
-      console.log(windowCoords, pageHeight);
-    (function scroll() {
-      if (window.pageYOffset < windowCoords) {
-        window.scrollBy(0, 10);
-        setTimeout(scroll, 0);
-      }
-      if (window.pageYOffset > windowCoords) {
-        window.scrollTo(0, windowCoords);
-      }
-    })();
-  }
-
-  btnScrollDowns.forEach(btnScrollDown => btnScrollDown.addEventListener('click', scrollDown));
-
-/* end Scroll Down Button */
 // собираем все якоря; устанавливаем время анимации и количество кадров
 const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
       animationTime = 300,
@@ -79,3 +57,23 @@ setTimeout(function(){
 },1000);
     }
 })
+
+
+
+const output = document.querySelector(`output`);
+const modal = document.querySelector(`#myModal`);
+const btns = document.querySelectorAll(`.order`);
+const cls = document.querySelector(`.close`)
+const nameRate = document.querySelector(`#name_rate`)
+btns.forEach(btn => btn.addEventListener(`click`, function(e){
+ modal.style.display = `block`;
+    
+       output.textContent = e.target.dataset.rate; 
+       nameRate.value = e.target.dataset.rate; 
+}));
+cls.addEventListener(`click`, () => modal.style.display = `none`); //закрываем модальное окно при нажатии на x
+window.addEventListener(`click`, function (e) { //закрываем модальное окно при клике на пустое место вне модального окна
+    if (e.target == modal) {
+        modal.style.display = "none";        
+    }
+});
